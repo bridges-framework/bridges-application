@@ -1,6 +1,6 @@
 {
   "name": "bridges-application",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "build/",
   "scripts": {
@@ -14,9 +14,7 @@
     "url": "https://github.com/stevenzeiler/bridges-application"
   },
   "dependencies": {
-    "bridges-controller": "^0.1.0",
-    "bridges-routes": "^1.0.0",
-    "express": "^4.10.6"
+    "bridges-supervisor": "^0.1.0"
   },
   "devDependencies": {
     "gulp": "^3.8.10",
