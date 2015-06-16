@@ -1,21 +1,42 @@
-"use strict";
+'use strict';
 
-var BridgesSupervisor = require("bridges-supervisor");
-var path = require("path");
-var fs = require("fs");
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
-var BridgesApplication = function BridgesApplication(options) {
-  if (fs.existsSync(!options.directory)) {
-    throw new Error("options.directory must be a valid directory");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var _bridgesSupervisor = require('bridges-supervisor');
+
+var _bridgesSupervisor2 = _interopRequireDefault(_bridgesSupervisor);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _fs = require('fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var BridgesApplication = function BridgesApplication(_ref) {
+  var directory = _ref.directory;
+  var processes = _ref.processes;
+
+  _classCallCheck(this, BridgesApplication);
+
+  if (!_fs2['default'].existsSync(directory)) {
+    throw new Error('options.directory must be a valid directory');
   }
-  if (!options.processes) {
-    options.processes = {
+  if (!processes) {
+    processes = {
       inject: []
     };
   }
-  options.processes.directory = path.join(options.directory, "processes");
-
-  this.supervisor = new BridgesSupervisor(options.processes);
+  processes.directory = _path2['default'].join(directory, 'processes');
+  this.supervisor = new _bridgesSupervisor2['default'](processes);
 };
 
-module.exports = BridgesApplication;
+exports['default'] = BridgesApplication;
+module.exports = exports['default'];
