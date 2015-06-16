@@ -26,12 +26,12 @@ var BridgesApplication = function BridgesApplication(_ref) {
 
   _classCallCheck(this, BridgesApplication);
 
-  if (!_fs2['default'].existsSync(options.directory)) {
+  if (!_fs2['default'].existsSync(directory)) {
     throw new Error('options.directory must be a valid directory');
   }
   if (!processes) {
     processes = {
-      injext: []
+      inject: []
     };
   }
   processes.directory = _path2['default'].join(directory, 'processes');

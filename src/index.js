@@ -4,12 +4,12 @@ import fs from 'fs'
 
 export default class BridgesApplication {
   constructor({directory, processes}) {
-    if (!fs.existsSync(options.directory)) {
+    if (!fs.existsSync(directory)) {
       throw new Error('options.directory must be a valid directory'); 
     }
     if (!processes) {
       processes = {
-        injext: []
+        inject: []
       }
     }
     processes.directory = path.join(directory, 'processes')
