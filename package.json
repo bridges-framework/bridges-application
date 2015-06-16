@@ -4,8 +4,7 @@
   "description": "",
   "main": "build/",
   "scripts": {
-    "test": "mocha -R spec test/",
-    "build": "gulp"
+    "build": "babel src --out-dir build"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +16,6 @@
     "bridges-supervisor": "^0.1.1"
   },
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-6to5": "^2.0.0",
-    "mocha": "^2.1.0"
+    "babel": "^5.5.8"
   }
 }
